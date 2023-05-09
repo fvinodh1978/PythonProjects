@@ -1,3 +1,5 @@
+GIFT is a GUI Interface Functional Tester
+
 Git Cheat Sheet
 
 Configuring user information used across all local repositories
