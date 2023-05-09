@@ -5,4 +5,4 @@ service = Service('Gift/lib/chromedriver.exe')
 browser = webdriver.Chrome(service=service)
 url = 'https://www.google.com'
 browser.get(url)
-print("testcase completed")
+print(browser.title)
