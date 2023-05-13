@@ -6,3 +6,4 @@ browser = webdriver.Chrome(service=service)
 url = 'https://www.google.com'
 browser.get(url)
 print(browser.title)
+print(browser.title)
