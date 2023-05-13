@@ -1,4 +1,4 @@
-GIFT is a GUI Interface Functional Tester
+GIFT is a Graphical Interface Functional Tester
 
 Git Cheat Sheet
 
@@ -16,19 +16,17 @@ Configuring user information used across all local repositories
 
 	git config --global color.ui auto
 
+4. Configuring user information, initializing and cloning repositories, initialize an existing directory as a Git repository
 
-SETUP & INIT
-Configuring user information, initializing and cloning repositories
-git init
-initialize an existing directory as a Git repository
+	git init
 
-retrieve an entire repository from a hosted location via URL
+5. retrieve an entire repository from a hosted location via URL
 
 	git clone [url]
 
-BRANCH & MERGE
-Isolating work in branches, changing context, and integrating changes
-git branch
+6. BRANCH & MERGE Isolating work in branches, changing context, and integrating changes
+	
+	git branch
 list your branches. a * will appear next to the currently active branch
 git branch [branch-name]
 create a new branch at the current commit
