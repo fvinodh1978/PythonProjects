@@ -1,0 +1,6 @@
+[{
+    "comment": "Load Device Data1",
+    "feedName": "device",
+    "status": "ready",
+    "table":"cb_audit"
+}]
