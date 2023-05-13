@@ -14,7 +14,5 @@ class ui_keywords:
     def launch_ui(self, url, user, passwd):
         browser = self.get_browser()
         browser.get(url)
-        print(browser.title)
-        print(browser.title)
-
-
+        title = browser.title
+        return title
