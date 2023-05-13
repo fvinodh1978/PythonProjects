@@ -1,4 +1,4 @@
-GIFT is a Graphical Interface Functional Tester
+GIFT is a Graphical User Interface Functional Tester
 
 Git Cheat Sheet
 
