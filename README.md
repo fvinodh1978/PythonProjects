@@ -4,7 +4,10 @@ Git Cheat Sheet
 
 Configuring user information used across all local repositories
 
-1. set a name that is identifiable for credit when review version history
+1. Get GIT Version
+	git --version
+	
+3. set a name that is identifiable for credit when review version history
 
 	git config --global user.name "Vinodh Francis"
 
