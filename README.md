@@ -97,9 +97,10 @@ git stash drop
 discard the changes from top of stash stack
 
 Checkout a branch and Create if it doesnt exists
+	
 	git checkout -b <branch>
 
-$ To push the current branch and set the remote as upstream, use
+To push the current branch and set the remote as upstream, use
 
     git push --set-upstream origin <branch>
 
