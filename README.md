@@ -95,3 +95,6 @@ git stash pop
 write working from top of stash stack
 git stash drop
 discard the changes from top of stash stack
+
+Checkout a branch and Create if it doesnt exists
+	git checkout -b <branch>
