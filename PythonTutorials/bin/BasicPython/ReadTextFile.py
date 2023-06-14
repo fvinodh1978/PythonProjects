@@ -1,26 +1,15 @@
 import json
+import os
 
-file= "/PythonTutorials/Resources/demofile.txt"
+my_File = os.path.abspath("../../Resources/site_file.json")
 try:
-    file_obj = open(file, "r")
+    file_obj = open(my_File, "r")
 except (FileNotFoundError) as e:
     print("File doesnt exists in the folder...")
 else:
-    # json_obj = json.dumps(python_obj)
-    print(file_obj.read())
+    lines = file_obj.readlines()
+    for line in lines:
+        print(line, end=" ")
 finally:
     print("File Reading Completed")
     file_obj.close()
-
-try:
-    file_obj = open(file, "a")
-except (FileNotFoundError) as e:
-    print("File doesnt exists in the folder...")
-else:
-    # json_obj = json.dumps(python_obj)
-    file_obj.write("\nThis is New End!")
-finally:
-    print("File Writing Completed")
-    file_obj.close()
-    file_obj = open(file, "r")
-    print(file_obj.read())

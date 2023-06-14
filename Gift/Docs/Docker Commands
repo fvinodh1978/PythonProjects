@@ -1,0 +1,6 @@
+Linux Commands
+1. Check the linux distribution
+    $lsb_release -d
+
+2. To get the details of the Server
+    $hostnamectl

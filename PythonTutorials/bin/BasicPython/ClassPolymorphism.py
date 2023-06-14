@@ -21,7 +21,7 @@ class Plane:
         self.brand = brand
         self.model = model
 
-    def move(self):
+    def move(self, mode):
         print("Fly!")
 
 

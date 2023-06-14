@@ -1,11 +1,11 @@
 class Person:
+    name = "Vinodh"
+    age = 44
 
     def __init__(self):
         self.name = self.name
         self.age = self.age
 
-    name = "Vinodh"
-    age = 44
 
 
 p1 = Person()

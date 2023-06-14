@@ -1,0 +1,23 @@
+[
+    {
+        "feed_name": "device",
+        "status": "ready1",
+        "total_records": 100,
+        "records_inserted": 30,
+        "kind": "storage"
+    },
+        {
+        "feed_name": "device",
+        "status": "ready1",
+        "total_records": 100,
+        "records_inserted": 30,
+        "kind": "compute"
+    },
+        {
+        "feed_name": "device",
+        "status": "ready1",
+        "total_records": 100,
+        "records_inserted": 30,
+        "kind": "compute"
+    }
+]

@@ -1,5 +1,6 @@
 square = lambda a: a * a
 
+square = lambda a: a * a
 
 def multiple(n):
     return lambda a: n * a
