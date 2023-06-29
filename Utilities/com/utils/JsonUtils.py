@@ -1,7 +1,8 @@
 import json
 import os
+import re
+from itertools import count
 from pathlib import Path
-import pyutil
 
 
 def format_json(feed_file):
@@ -54,11 +55,12 @@ def split_json_array(file):
     my_file = Path(file).resolve().stem
     my_path = os.path.dirname(file)
     print(my_path, my_file)
-    file_path="C:\Official\ELK\Data\Processed\\" + my_file
+    file_path = "C:\Official\ELK\Data\Processed\\" + my_file
     for ii, doc in enumerate(docs):
         with open(file_path + "_" + '{}.json'.format(ii), 'w') as out:
             # json.dump(doc, out)
             out.write('{}\n\r'.format(json.dumps(doc)))
+
 
 def render_files_to_logstash():
     files = []
@@ -115,6 +117,7 @@ def get_json_obj(my_file, outfile, key, value):
 
 
 def get_rec_count(path, key):
+    # Gets the count of Records from list of files which contain a key
     device_types = ["physicalPort", "PhysicalPort", "Site", "Rack", "compute", "storage", "appliance", "router",
                     "switch"]
     files = os.listdir(path)
@@ -137,20 +140,6 @@ def get_rec_count(path, key):
             print(file + " : " + kind + " : " + str(len(filtered_list)))
 
 
-def get_rec_count1(my_file, out_file, key):
-    with open(my_file, "r") as file_obj:
-        python_obj = json.load(file_obj)
-    print("total Records : " + str(len(python_obj)))
-    values = []
-    for obj in python_obj:
-        values.append(obj.get(key))
-
-    lst = list(set(values))
-
-    with open(out_file, "w") as out_file_obj:
-        out_file_obj.write('\n'.join([i for i in lst[0:]]))
-
-
 def get_obj_count(my_file, key):
     with open(my_file, "r") as file_obj:
         python_obj = json.load(file_obj)
@@ -171,6 +160,22 @@ def get_ip_count(my_file, out_file):
         out_file_obj.write('\n'.join([i for i in ips[0:]]))
 
     # print("Octects :", octects)
+
+
+def get_key_value_count(my_path, key):
+    files = os.listdir(my_path)
+    for file in files:
+        my_file = os.path.join(my_path, file)
+        kinds = []
+        with open(my_file, "r") as file_obj:
+            for line in file_obj:
+                # items = re.findall("\"" + key + "\"\s*:\s*\"*[a-z, A-Z, 0-9]*\"*", line)
+                items = re.findall("\"" + key + "\"\s*:\s*\"*.+\"*", line)
+                # print(items)
+                for item in items:
+                    kinds.append(str(item.replace('"', "").split(":")[1].strip()))
+        for kind in set(kinds):
+            print(file + " : " + kind + " : " + str(kinds.count(kind)))
 
 
 # file = 'C:\\Users\\vf1935\\Downloads\\UIV_20221111_0045\\CNF_UIV_20221111_0045.json'
@@ -204,7 +209,7 @@ def get_ip_count(my_file, out_file):
 # my_file = "C:\Official\Projects\CloudBand\Data\Prod\\nokiacb_vnfVirtualPort_delta_20230531.json"
 
 # VNF Interface File
-my_file = "C:\Official\Projects\CloudBand\Data\Prod\\nokiacb_vnfLogicalInterface_delta_20230531.json"
+# my_file = "C:\Official\Projects\CloudBand\Data\Prod\\nokiacb_vnfLogicalInterface_delta_20230531.json"
 
 # CNF Device File
 # my_file = "C:\Official\Projects\CloudBand\Data\Original\\nokiacb_cnfVirtualDevice_delta_20230516.json"
@@ -215,16 +220,16 @@ my_file = "C:\Official\Projects\CloudBand\Data\Prod\\nokiacb_vnfLogicalInterface
 # CNF Port File
 # my_file = "C:\Official\Projects\CloudBand\Data\Prod\\nokiacb_cnfVirtualPort_delta_20230602.json"
 
-key = "kind"
+key = "status"
 # key = "name"
 value = "multusPort"
 temp_file = "C:\Official\Projects\CloudBand\Data\Test Data\\nokiacb_pnf-PhysicalPort.json"
 out_file = "C:\Official\Projects\CloudBand\Data\Test Data\\nokiacb_pnf-PhysicalPortIPs.txt"
-my_path = "C:\Official\Projects\CloudBand\Data\Prod"
+my_path = "C:\Personal\Vinodh\MyProjects\PythonProjects\Workspace\Resources\data"
 
 # get_json_obj(my_file, temp_file, key, value)
-get_rec_count(my_path, key)
+# get_rec_count(my_path, key)
+get_key_value_count(my_path, key)
 key = "object_id"
 # get_rec_count1(temp_file, out_file, key)
 # get_ip_count(my_file, out_file)
-
