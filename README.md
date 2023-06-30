@@ -36,7 +36,7 @@ TLDR; No || Explanation: To communicate with the remote git repo you need to lin
    
 7. Push to a Remote Repo first time
 
-	git push --set-upstream <name> <branch>
+	git push --set-upstream name branch
 
 8. retrieve an entire repository from a hosted location via URL
 
