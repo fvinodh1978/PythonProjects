@@ -30,11 +30,19 @@ TLDR; No || Explanation: To communicate with the remote git repo you need to lin
 
 	git init
 
-5. retrieve an entire repository from a hosted location via URL
+5. Create Remoe Repository
+
+   	 git remote add SpringBoot https://github.com/fvinodh1978/SpringBoot.git
+   
+7. Push to a Remote Repo first time
+
+	git push --set-upstream <name> <branch>
+
+8. retrieve an entire repository from a hosted location via URL
 
 	git clone [url]
 
-6. BRANCH & MERGE Isolating work in branches, changing context, and integrating changes
+9. BRANCH & MERGE Isolating work in branches, changing context, and integrating changes
 	
 	git branch
 list your branches. a * will appear next to the currently active branch
