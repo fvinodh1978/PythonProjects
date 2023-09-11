@@ -2,23 +2,14 @@ GIFT is a Graphical User Interface Functional Tester
 
 Git Cheat Sheet
 
-Configuring user information used across all local repositories
-
-12
-
-
-TLDR; No || Explanation: To communicate with the remote git repo you need to link it with a folder in your local machine (git init). After this, add the remote repo link (git remote add origin <URL>) and pull it (git pull origin master). Now, once your local folder is synchronized with the remote repo you're free to add any new files (git add <file>, git commit -m <message> and git push origin master). This would be the simplest way to do it. Remember, git stores all the information in your that local folder (in .git/ folder) which you just linked with the remote repo and its responsibility is to maintain all git metadata (credentials, git history...). Without this process in place, it would be difficult for git to track historical information about the project. I hope you understand the reason behind this.
-	
-	
-
 1. Get GIT Version
 	git --version
 	
-3. set a name that is identifiable for credit when review version history
+3. set a name that is associated with the Repository
 
 	git config --global user.name "Vinodh Francis"
 
-2. set an email address that will be associated with each history marker
+2. set an email address that will be associated with Repository
 	
 	git config --global user.email "f.vinodhfranklin@gmail.com"
 
