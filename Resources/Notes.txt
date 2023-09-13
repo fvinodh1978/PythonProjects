@@ -1,0 +1,23 @@
+Python Data Types
+
+Lists
+    a. Ordered
+    b. Indexed
+    c. Accepts Duplicates
+    d. Can be changed
+tuple
+    a. Ordered
+    b. Indexed
+    c. Accepts Duplicates
+    d. Cannot be changed
+sets
+    a. unOrdered
+    b. unIndexed
+    c. Do not Accepts Duplicates
+    d. Can be changed
+dict
+    a. unOrdered
+    b. unIndexed
+    c. Do not Accepts Duplicates
+    d. Can be changed
+    
