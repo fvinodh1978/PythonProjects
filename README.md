@@ -2,23 +2,14 @@ GIFT is a Graphical User Interface Functional Tester
 
 Git Cheat Sheet
 
-Configuring user information used across all local repositories
-
-12
-
-
-TLDR; No || Explanation: To communicate with the remote git repo you need to link it with a folder in your local machine (git init). After this, add the remote repo link (git remote add origin <URL>) and pull it (git pull origin master). Now, once your local folder is synchronized with the remote repo you're free to add any new files (git add <file>, git commit -m <message> and git push origin master). This would be the simplest way to do it. Remember, git stores all the information in your that local folder (in .git/ folder) which you just linked with the remote repo and its responsibility is to maintain all git metadata (credentials, git history...). Without this process in place, it would be difficult for git to track historical information about the project. I hope you understand the reason behind this.
-	
-	
-
 1. Get GIT Version
 	git --version
 	
-3. set a name that is identifiable for credit when review version history
+3. set a name that is associated with the Repository
 
 	git config --global user.name "Vinodh Francis"
 
-2. set an email address that will be associated with each history marker
+2. set an email address that will be associated with Repository
 	
 	git config --global user.email "f.vinodhfranklin@gmail.com"
 
@@ -30,11 +21,19 @@ TLDR; No || Explanation: To communicate with the remote git repo you need to lin
 
 	git init
 
-5. retrieve an entire repository from a hosted location via URL
+5. Create Remoe Repository
+
+   	 git remote add SpringBoot https://github.com/fvinodh1978/SpringBoot.git
+   
+7. Push to a Remote Repo first time
+
+	git push --set-upstream name branch
+
+8. retrieve an entire repository from a hosted location via URL
 
 	git clone [url]
 
-6. BRANCH & MERGE Isolating work in branches, changing context, and integrating changes
+9. BRANCH & MERGE Isolating work in branches, changing context, and integrating changes
 	
 	git branch
 list your branches. a * will appear next to the currently active branch
